@@ -11,6 +11,8 @@ public class Sandboxing {
 
     static Supplier<Element>[] supplier;
 
+    public static boolean debug = false;
+
     public static ArrayList<String> getDependencies(byte[] rawClassData) {
         HashMap<Integer, Element> classElementHashMap = new HashMap<>();
         ArrayList<String> arrayList = new ArrayList<>();
@@ -21,12 +23,14 @@ public class Sandboxing {
         short count = byteBuffer.getShort();
         for(int x = 0; x < count - 1; x++) {
             byte id = byteBuffer.get();
-            System.out.print(id);
             Element element = supplier[id - 1].get().readAll(byteBuffer);
-            if(element instanceof UTF8Element utf8Element) {
-                System.out.print(" " + utf8Element.string);
+            if(debug) {
+                System.out.print(id);
+                if (element instanceof UTF8Element utf8Element) {
+                    System.out.print(" " + utf8Element.string);
+                }
+                System.out.println();
             }
-            System.out.println();
             classElementHashMap.put(x,element);
         }
 
