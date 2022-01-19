@@ -1,4 +1,4 @@
-package dev.hilligans.sandboxing.elements;
+package dev.hilligans.dependencydetection.elements;
 
 import java.nio.ByteBuffer;
 import java.nio.charset.StandardCharsets;

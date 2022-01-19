@@ -1,8 +1,8 @@
-package dev.hilligans.sandboxing.elements;
+package dev.hilligans.dependencydetection.elements;
 
 import java.nio.ByteBuffer;
 
-public class StringElement extends Element {
+public class ClassElement extends Element {
 
     public short index;
 

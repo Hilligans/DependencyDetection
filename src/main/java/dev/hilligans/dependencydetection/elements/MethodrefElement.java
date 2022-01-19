@@ -1,8 +1,9 @@
-package dev.hilligans.sandboxing.elements;
+package dev.hilligans.dependencydetection.elements;
 
 import java.nio.ByteBuffer;
 
-public class NameAndTypeElement extends Element {
+public class MethodrefElement extends Element {
+
     @Override
     public Element readAll(ByteBuffer byteBuffer) {
         byteBuffer.getInt();

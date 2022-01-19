@@ -1,11 +1,12 @@
-package dev.hilligans.sandboxing.elements;
+package dev.hilligans.dependencydetection.elements;
 
 import java.nio.ByteBuffer;
 
-public class MethodHandleElement extends Element {
+public class MethodTypeElement extends Element {
+
     @Override
     public Element readAll(ByteBuffer byteBuffer) {
-        byteBuffer.get();
+        System.out.println("e");
         byteBuffer.getShort();
         return this;
     }

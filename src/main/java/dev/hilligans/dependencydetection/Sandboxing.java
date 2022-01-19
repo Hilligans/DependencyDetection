@@ -1,6 +1,6 @@
-package dev.hilligans.sandboxing;
+package dev.hilligans.dependencydetection;
 
-import dev.hilligans.sandboxing.elements.*;
+import dev.hilligans.dependencydetection.elements.*;
 
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
