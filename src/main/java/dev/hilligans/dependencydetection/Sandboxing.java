@@ -11,12 +11,10 @@ public class Sandboxing {
 
     static Supplier<Element>[] supplier;
 
-
-
-    public static ArrayList<String> getDependencies(byte[] values) {
+    public static ArrayList<String> getDependencies(byte[] rawClassData) {
         HashMap<Integer, Element> classElementHashMap = new HashMap<>();
         ArrayList<String> arrayList = new ArrayList<>();
-        ByteBuffer byteBuffer = ByteBuffer.wrap(values);
+        ByteBuffer byteBuffer = ByteBuffer.wrap(rawClassData);
 
         byteBuffer.getInt(); //magic number
         byteBuffer.getInt(); //version numbers
@@ -32,7 +30,6 @@ public class Sandboxing {
             classElementHashMap.put(x,element);
         }
 
-
         for(int x : classElementHashMap.keySet()) {
             Element element = classElementHashMap.get(x);
             if(element instanceof ClassElement classElement) {
@@ -42,7 +39,6 @@ public class Sandboxing {
         }
         return arrayList;
     }
-
 
     static {
         supplier = new Supplier[18];
